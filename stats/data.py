@@ -5,7 +5,10 @@ import glob
 
 import pandas as pd
 
-game_files = glob.glob(os.path.join(os.getcwd(), 'games', '*.EVE'))
+# Returns a tuple.
+# Example: '/Users/john/GitProjects/Python-Baseball/stats', 'data.py'
+path, file_name = os.path.split(os.path.abspath(__file__))
+game_files = glob.glob(os.path.join(os.path.dirname(__file__), '..', 'games', '*.EVE'))
 game_files.sort()
 
 game_frames = []
