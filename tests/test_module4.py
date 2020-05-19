@@ -5,27 +5,27 @@ matplotlib.use('Agg')
 from .utils import get_assignments, get_calls
 from stats import offense
 
-@pytest.mark.test_select_all_plays_module4
-def test_select_all_plays_module4():
-    assert 'games' in dir(offense), 'Have you imported `games` from `data`?'
-    assert 'plays:games:games:type:play' in get_assignments(offense), 'Select the `play` rows of the `games` DataFrame.'
-    assert 'plays:columns:type:inning:team:player:count:pitches:event:game_id:year' in get_assignments(offense), 'Set the correct column labels of the `games` DataFrame.'
+# @pytest.mark.test_select_all_plays_module4
+# def test_select_all_plays_module4():
+#     assert 'games' in dir(offense), 'Have you imported `games` from `data`?'
+#     assert 'plays:games:games:type:play' in get_assignments(offense), 'Select the `play` rows of the `games` DataFrame.'
+#     assert 'plays:columns:type:inning:team:player:count:pitches:event:game_id:year' in get_assignments(offense), 'Set the correct column labels of the `games` DataFrame.'
 
-@pytest.mark.test_select_only_hits_module4
-def test_select_only_hits_module4():
-    assert 'hits:plays:loc:plays:event:str:contains:^(?:S(?!B)|D|T|HR):inning:event' in get_assignments(offense), 'Refine the `games` DataFrame to contain only hits. Store the new DataFrame in a variable called `hits`.'
+# @pytest.mark.test_select_only_hits_module4
+# def test_select_only_hits_module4():
+#     assert 'hits:plays:loc:plays:event:str:contains:^(?:S(?!B)|D|T|HR):inning:event' in get_assignments(offense), 'Refine the `games` DataFrame to contain only hits. Store the new DataFrame in a variable called `hits`.'
 
 @pytest.mark.test_convert_column_type_module4
 def test_convert_column_type_module4():
     assert 'hits:loc:None:None:None:inning:pd:to_numeric:hits:loc:None:None:None:inning' in get_assignments(offense), 'Change the data type of the `inning` column to numeric.'
 
-@pytest.mark.test_replace_dictionary_module4
-def test_replace_dictionary_module4():
-    assert 'replacements:^S(.*):^D(.*):^T(.*):^HR(.*):single:double:triple:hr' in get_assignments(offense), '`replacements` is not a dictionary, doesn\'t exist, or contains the wrong values.'
+# @pytest.mark.test_replace_dictionary_module4
+# def test_replace_dictionary_module4():
+#     assert 'replacements:^S(.*):^D(.*):^T(.*):^HR(.*):single:double:triple:hr' in get_assignments(offense), '`replacements` is not a dictionary, doesn\'t exist, or contains the wrong values.'
 
-@pytest.mark.test_replace_function_module4
-def test_replace_function_module4():
-    assert 'hit_type:hits:event:replace:replacements:regex:True' in get_assignments(offense), 'The `replace()` function is not used to replace the event column with the correct hit type.'
+# @pytest.mark.test_replace_function_module4
+# def test_replace_function_module4():
+#     assert 'hit_type:hits:event:replace:replacements:regex:True' in get_assignments(offense), 'The `replace()` function is not used to replace the event column with the correct hit type.'
 
 @pytest.mark.test_add_a_new_column_module4
 def test_add_a_new_column_module4():
